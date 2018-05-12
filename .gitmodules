@@ -1,3 +1,6 @@
 [submodule "output"]
 	path = output
 	url = https://github.com/mortza/mortza.github.io
+[submodule "pelican-semantic-ui"]
+	path = pelican-semantic-ui
+	url = https://github.com/mortza/pelican-semantic-ui.git
