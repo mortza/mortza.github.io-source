@@ -10,6 +10,7 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
+# SITEURL = 'https://mortza.github.io'
 SITEURL = ''
 RELATIVE_URLS = False
 
