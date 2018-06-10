@@ -1,11 +1,27 @@
-<html>
+from random import randint
+
+cats = [
+    'Python',
+    'Django',
+    'C++',
+    'Qt',
+    'Boost',
+    'Web',
+    'Desktop',
+    'Linux',
+    'Windows',
+]
+for i in range(1, 25):
+    tags = [cats[randint(0, 8)] for j in range(randint(1, 8))]
+    tags = ','.join(tags)
+    temp_str = '''<html>
     <head>
-        <title>My super title</title>
-        <meta name="tags" content="blog" />
+        <title>My super title {i}</title>
+        <meta name="tags" content="{tags}" />
         <meta name="date" content="2018-05-21" />
-        <meta name="categories" content="django, python" />
+        <meta name="categories" content="Tutorial" />
         <meta name="author" content="Morteza Allahpour" />
-        <meta name="summary" content="i will show you how create a simple blog" />
+        <meta name="summary" content="i will show you how create a simple blog nubmered {i}" />
     </head>
     <body>
         <p>
@@ -29,4 +45,11 @@ class Profile(models.Model):
         <p>
         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
     </body>
-</html>
+</html>'''.format(
+        i=i, tags=tags)
+    file = open(
+        'content/articles/article{i}.html'.format(i=i),
+        mode='w+',
+        encoding='utf-8')
+    file.write(temp_str)
+    file.close()
