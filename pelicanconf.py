@@ -1,6 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+import sys
+from jfilters import site_filters
+import jinja2
+
+sys.path.append('.')
+JINJA_FILTERS = {
+    'TagColor': site_filters.getTagColor,
+    'zip': site_filters.jinja2_tag_color_zipper,
+    'jDate': site_filters.convert_to_jalali_date,
+}
 
 AUTHOR = 'Morteza Allahpour'
 SITENAME = ''
@@ -20,13 +30,13 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+LOAD_CONTENT_CACHE = False
+
 # Blogroll
-LINKS = (
-	('Twitter', 'https://twitter.com/#'),
-	)
+LINKS = (('Twitter', 'https://twitter.com/#'), )
 
 # Social widget
-SOCIAL = (('Twitter', 'https://twitter/#'),)
+SOCIAL = (('Twitter', 'https://twitter/#'), )
 
 # DEFAULT_PAGINATION = 10
 
