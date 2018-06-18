@@ -14,7 +14,8 @@ JINJA_FILTERS = {
 
 AUTHOR = 'Morteza Allahpour'
 SITENAME = ''
-SITEURL = ''
+# SITEURL = 'https://mortza.github.io/blog'
+SITEURL = 'https://mortza.github.io/blog'
 USE_FOLDER_AS_CATEGORY = True
 DELETE_OUTPUT_DIRECTORY = True
 PATH = 'content'
@@ -41,5 +42,5 @@ SOCIAL = (('Twitter', 'https://twitter/#'), )
 # DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
+RELATIVE_URLS = False
 THEME = './pelican-semantic-ui'
